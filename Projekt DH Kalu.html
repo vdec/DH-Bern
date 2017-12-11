@@ -6,9 +6,9 @@
 
         <meta charset="utf-8" />
 
-        <link rel="stylesheet" href="Projekt DH 2.css">
+        <link rel="stylesheet" href="Projekt DH Kalu.css">
 
-        <title>Projekt DH Valentin Decoppet and Catherine Jost</title>
+        <title>Projet DH Valentin Decoppet et Catherine Jost</title>
 
     </head>
 
@@ -18,74 +18,56 @@
 
         <div id="bloc_page">
             <header>
-                <h1> Projekt DH Valentin Decoppet and Catherine Jost</h1>
-                <h2> Vergleich zwischen Queneaus <i>Exercices de style</i>, Helmlé/Harigs <i> Stilübungen</i> und Heibert/Schmidt-Henkels <i> Stilübungen</i></h2>
+                <h1> Projet DH Valentin Decoppet et Catherine Jost</h1>
+                <h2> Comparaison entre les <i>Exercices de style</i> de Queneaus, les <i> Stilübungen</i> de Helmlé/Harig et les <i> Stilübungen</i> de Heibert/Schmidt-Henkel </h2>
             </header>
-        <div id="conteneur">
-        <div id="comparé">
-            <form name="change">
-        <SELECT NAME="options" ONCHANGE="document.getElementById('iframe1').src = this.options[ this.selectedIndex].value">
-            <option>choise</option>
-            <option value="Notations.html">Notations</option>
-            <option value="Olfactif.html">Olfactif</option>
-            <option value="Angaben.html">Angaben</option>
-        </SELECT>
-        </form>
-        <iframe name="iframe" id="iframe1" src="yahoo.ca"></iframe>
+            <div id="conteneur">
 
-           <!--<div id="dropdown1" class="dropdown">
-            <button class="dropbtn">Textes</button>
-            <div class="dropdown-content">
-                <ul>Original (1948)
-                <li><a href="Notations.html" >Notations</a></li>
-                <li><a href="Olfactif.html">Olfactif</a></li>
-                </ul>
-                <ul> Traduction (1990) 
-                <li><a href="Angaben.html">Angaben</a></li>
-                <li><a href="#">Geruchlich</a></li>
-                </ul>
-                <ul>Traduction 2016
-                <li><a href="Notiert.html">Notiert</a></li>
-                <li><a href="Olfaktorisch.html">Olfaktorisch</a></li>
-                </ul>      
-            </div>-->
-            <div id="comparétext"></div> 
-        </div> 
-    </div>
-        <div id="commentaire">
+                <div id="comparé">
+                    <form name="change">
+                        <SELECT ID="Comparé" NAME="options" ONCHANGE="document.getElementById('iframe1').src = this.options[ this.selectedIndex].value">
+                            <option value="Vide.html">Choisir un texte</option>
+                            <option value="Notations.html">Notations</option>
+                            <option value="Angaben.html">Angaben</option>
+                            <option value="Notiert.html">Notiert</option>
+                            <option value="Olfactif.html">Olfactif</option>
+                            <option value="Geruchlich.html">Geruchlich</option>
+                            <option value="Olfaktorisch.html">Olfaktorisch</option>
+                        </SELECT>
+                    </form>
+                                <iframe name="iframe" id="iframe1" src="Vide.html"></iframe> 
+                </div> 
+
+                <div id="comparant">
+                    <form name="change1">
+                        <SELECT ID="Comparant" NAME="options" ONCHANGE="document.getElementById('iframe2').src = this.options[ this.selectedIndex].value">
+                            <option value="Vide.html">Choisir un texte</option>
+                            <option value="Notations.html">Notations</option>
+                            <option value="Angaben.html">Angaben</option>
+                            <option value="Notiert.html">Notiert</option>
+                            <option value="Olfactif.html">Olfactif</option>
+                            <option value="Geruchlich.html">Geruchlich</option>
+                            <option value="Olfaktorisch.html">Olfaktorisch</option>
+                        </SELECT>
+
+                    </form>
+                                <iframe name="iframe" id="iframe2" src="Vide.html"></iframe>
+                </div>
+
+                <div id="commentaire">
+                    <script type="text/javascript">
+                        var comparé =  document.getElementById('Comparant');
+                        var comparant = document.getElementById('Comparé');
+                        if (comparé.options[comparé.selectedIndex].value == "Notations.html"){
+                            
+                        }
+                    </script>
+                    <iframe name="iframe" id="iframe3" src="Vide.html"></iframe>
+                </div>
+
+            </div>
+
         </div>
-        <div id="comparant">
-        <form name="change1">
-        <SELECT NAME="options" ONCHANGE="document.getElementById('iframe1').src = this.options[ this.selectedIndex].value">
-            <option>choise</option>
-            <option value="Notations.html">Notations</option>
-            <option value="Olfactif.html">Olfactif</option>
-            <option value="Angaben.html">Angaben</option>
-        </SELECT>
-        </form>
-        <iframe name="iframe" id="iframe1" src="yahoo.ca"></iframe>
-
-        <!--<div id="dropdown2" class="dropdown">
-            <button class="dropbtn">Textes</button>
-            <div class="dropdown-content">
-                <ul>Original (1948)
-                <li><a href="Notations.html" >Notations</a></li>
-                <li><a href="Olfactif.html">Olfactif</a></li>
-                </ul>
-                <ul> Traduction (1990) 
-                <li><a href="Angaben.html">Angaben</a></li>
-                <li><a href="Geruchlich.html">Geruchlich</a></li>
-                </ul>
-                <ul>Traduction 2016
-                <li><a href="Notiert.html">Notiert</a></li>
-                <li><a href="Olfaktorisch.html">Olfaktorisch</a></li>
-                </ul> 
-            </div>-->
-            <div id="comparanttexte"></div>
-        </div>
-    </div>
-
-    </div>
      <footer>
             <p> Copyrights Valentin Decoppet and Catherine Jost</p>
      </footer>
