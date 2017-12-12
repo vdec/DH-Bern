@@ -22,10 +22,134 @@
                 <h2> Comparaison entre les <i>Exercices de style</i> de Queneaus, les <i> Stilübungen</i> de Helmlé/Harig et les <i> Stilübungen</i> de Heibert/Schmidt-Henkel </h2>
             </header>
             <div id="conteneur">
+                <script type="text/javascript">
+                    function setIframe1(comparéId,newComparé, comparantId, commentaireId){
+                        var comparé = document.getElementById(comparéId);
+                        comparé.src = newComparé;
+                        var comparant = document.getElementById(comparantId);
+                        var commentaire = document.getElementById(commentaireId);
+                        if (newComparé == "Notations.html"){
+                            if (comparant.value== "Angaben.html"){// Case Notation + Angaben
+                                commentaire.src = "CommN1A.html";
+                            } else if (comparant.value == "Notiert.html"){// Case Notation + Notiert
+                                commentaire.src = "CommN1N2.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        else if (newComparé == "Angaben.html"){
+                            if (comparant.value  == "Notations.html"){// Case Angaben + Notation
+                                commentaire.src = "CommN1A.html";
+                            } else if (comparant.value  == "Notiert.html"){// Case Angaben + Notiert
+                                commentaire.src = "CommN2A.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        else if (newComparé == "Notiert.html"){
+                            if (comparant.value  == "Notations.html"){// Case Notiert + Notation
+                                commentaire.src = "CommN1N2.html";
+                            } else if (comparant.value  == "Geruchlich.html"){// Case Notiert + Angaben
+                                commentaire.src = "CommN2A.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        if (newComparé == "Olfactif.html"){
+                            if (comparant.value == "Geruchlich.html"){// Case Notation + Angaben
+                                commentaire.src = "CommO1G.html";
 
+                            } else if (comparant.value == "Olfaktorisch.html"){// Case Notation + Notiert
+                                commentaire.src = "CommO1O2.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        else if (newComparé == "Geruchlich.html"){
+                            if (comparant.value  == "Olfactif.html"){// Case Angaben + Notation
+                                commentaire.src = "CommO1G.html";
+                            } else if (comparant.value  == "Olfaktorisch.html"){// Case Angaben + Notiert
+                                commentaire.src = "CommO2G.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        else if (newComparé == "Olfaktorisch.html"){
+                            if (comparant.value  == "Olfactif.html"){// Case Notiert + Notation
+                                commentaire.src = "CommO1O2.html";
+                            } else if (comparant.value  == "Geruchlich.html"){// Case Notiert + Angaben
+                                commentaire.src = "CommO2G.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                    }
+                    function setIframe2(comparantId,newComparant, comparéId, commentaireId){
+                        var comparé = document.getElementById(comparéId);
+                        var comparant = document.getElementById(comparantId);
+                        comparant.src = newComparant;
+                        var commentaire = document.getElementById(commentaireId);
+                        if (newComparant == "Notations.html"){
+                            if (comparé.value == "Angaben.html"){// Case Notation + Angaben
+                                commentaire.src = "CommN1A.html";
+
+                            } else if (comparé.value == "Notiert.html"){// Case Notation + Notiert
+                                commentaire.src = "CommN1N2.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        else if (newComparant == "Angaben.html"){
+                            if (comparé.value  == "Notations.html"){// Case Angaben + Notation
+                                commentaire.src = "CommN1A.html";
+                            } else if (comparé.value  == "Notiert.html"){// Case Angaben + Notiert
+                                commentaire.src = "CommN2A.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        else if (newComparant == "Notiert.html"){
+                            if (comparé.value  == "Notations.html"){// Case Notiert + Notation
+                                commentaire.src = "CommN1N2.html";
+                            } else if (comparé.value  == "Angaben.html"){// Case Notiert + Angaben
+                                commentaire.src = "CommN2A.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        if (newComparant == "Olfactif.html"){
+                            if (comparé.value == "Geruchlich.html"){// Case Notation + Angaben
+                                commentaire.src = "CommO1G.html";
+
+                            } else if (comparé.value == "Olfaktorisch.html"){// Case Notation + Notiert
+                                commentaire.src = "CommO1O2.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        else if (newComparant == "Geruchlich.html"){
+                            if (comparé.value  == "Olfactif.html"){// Case Angaben + Notation
+                                commentaire.src = "CommO1G.html";
+                            } else if (comparé.value  == "Olfaktorisch.html"){// Case Angaben + Notiert
+                                commentaire.src = "CommO2G.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                        else if (newComparant == "Olfaktorisch.html"){
+                            if (comparé.value  == "Olfactif.html"){// Case Notiert + Notation
+                                commentaire.src = "CommO1O2.html";
+                            } else if (comparé.value  == "Geruchlich.html"){// Case Notiert + Angaben
+                                commentaire.src = "CommO2G.html";
+                            } else {
+                                commentaire.src = "Vide.html";
+                            }
+                        }
+                    }
+                </script>
                 <div id="comparé">
                     <form name="change">
-                        <SELECT ID="Comparé" NAME="options" ONCHANGE="document.getElementById('iframe1').src = this.options[ this.selectedIndex].value">
+                        <SELECT ID="Comparé" NAME="options" ONCHANGE="setIframe1('iframe1',this.options[this.selectedIndex].value, 'Comparant', 'iframe3')">
                             <option value="Vide.html">Choisir un texte</option>
                             <option value="Notations.html">Notations</option>
                             <option value="Angaben.html">Angaben</option>
@@ -35,12 +159,11 @@
                             <option value="Olfaktorisch.html">Olfaktorisch</option>
                         </SELECT>
                     </form>
-                                <iframe name="iframe" id="iframe1" src="Vide.html"></iframe> 
+                                <iframe name="iframe1" id="iframe1" src="Vide.html"></iframe> 
                 </div> 
-
                 <div id="comparant">
                     <form name="change1">
-                        <SELECT ID="Comparant" NAME="options" ONCHANGE="document.getElementById('iframe2').src = this.options[ this.selectedIndex].value">
+                        <SELECT ID="Comparant" NAME="options" ONCHANGE="setIframe2('iframe2',this.options[this.selectedIndex].value,'Comparé', 'iframe3')">
                             <option value="Vide.html">Choisir un texte</option>
                             <option value="Notations.html">Notations</option>
                             <option value="Angaben.html">Angaben</option>
@@ -51,18 +174,10 @@
                         </SELECT>
 
                     </form>
-                                <iframe name="iframe" id="iframe2" src="Vide.html"></iframe>
+                    <iframe name="iframe2" id="iframe2" src="Vide.html"></iframe>
                 </div>
-
                 <div id="commentaire">
-                    <script type="text/javascript">
-                        var comparé =  document.getElementById('Comparant');
-                        var comparant = document.getElementById('Comparé');
-                        if (comparé.options[comparé.selectedIndex].value == "Notations.html"){
-                            
-                        }
-                    </script>
-                    <iframe name="iframe" id="iframe3" src="Vide.html"></iframe>
+                    <iframe name="iframe3" id="iframe3" src="Vide.html"></iframe>    
                 </div>
 
             </div>
