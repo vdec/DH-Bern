@@ -1,0 +1,80 @@
+---
+layout: page
+title: "Comparaisons"
+
+# Structure des textes et de leurs comparaisons
+texts:
+    "notations":
+        comparisons:
+            - "angaben"
+            - "notiert"
+---
+
+<!-- Construction du selecteur a partir de la structure en en-tête -->
+<!-- La valeur de chaque option est "texte1:texte2" -- >
+<select class="form-control" onchange="showComparison(this.options[this.selectedIndex].value)" id="selector">
+{% for c in page.texts %}
+  <optgroup label="{{ c[0] | capitalize }}">
+    {% for t in c[1].comparisons %}
+    <option value="{{ c[0]}}:{{ t }}">{{ t | capitalize }}</option>
+    {% endfor %}
+  </optgroup>
+{% endfor %}
+</select>
+
+<!-- div (vides) pour placer les textes et le commentaire -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 panel-body" id="text1">
+    </div>
+    <div class="col-sm-4 panel-body" id="text2">
+    </div>
+    <div class="col-sm-4 panel-body" id="comment">
+    </div>
+  </div>
+</div>
+
+
+<script>
+    // Fonction pour charger les fichiers de textes et le commentaire
+    // Le paramètre de la fonction est "texte1:texte2", ce qui correspond à la valeur dans le sélecteur
+    function showComparison(values) {
+        var split = values.split(":");
+
+        var file1 = "texts/" + split[0] + ".html";
+        $.ajax({
+            url: file1
+            , dataType: "text"
+            , success: function(data) {
+                $("#text1").html(data);
+            }
+        });
+        
+        var file2 = "texts/" + split[1] + ".html";
+        $.ajax({
+            url: file2
+            , dataType: "text"
+            , success: function(data) {
+                $("#text2").html(data);
+                console.log(data);
+            }
+        });
+        
+        var file3 = "comments/" + split[0] + "-" + split[1] + ".html";
+        $.ajax({
+            url: file3
+            , dataType: "text"
+            , success: function(data) {
+                $("#comment").html(data);
+                console.log(data);
+            }
+        });
+    }
+    
+    // Charge le texte par défaut à l'ouverture de la page
+    $( document ).ready(function() {
+        var select = document.getElementById("selector");
+        showComparison(select.options[select.selectedIndex].value);
+    });  
+</script>
+
