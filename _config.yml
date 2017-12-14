@@ -2,7 +2,7 @@
 title: DH project
 description: "This is an example website for the DH projects 2017"
 email: lxpugin@gmail.com
-baseurl: "" 
+baseurl: "/" 
 
 # Build settings
 markdown: kramdown
