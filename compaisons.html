@@ -11,7 +11,7 @@ texts:
 ---
 
 <!-- Construction du selecteur a partir de la structure en en-tête -->
-<!-- La valeur de chaque option est "texte1:texte2" -- >
+<!-- La valeur de chaque option est "texte1:texte2" -->
 <select class="form-control" onchange="showComparison(this.options[this.selectedIndex].value)" id="selector">
 {% for c in page.texts %}
   <optgroup label="{{ c[0] | capitalize }}">

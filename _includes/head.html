@@ -5,10 +5,10 @@
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
 
-    <link rel="stylesheet" type="text/css" media="screen,projection" href="{{ "/css/bootstrap.min.css" | relative_url }}" />
-    <link rel="stylesheet" type="text/css" media="screen,projection" href="{{ "/css/main.css" | relative_url }}" />
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="{{ site.baseurl }}/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="{{ site.baseurl }}/css/main.css" />
     
-    <script src="{{ "javascript/jquery-1.11.2.min.js" | relative_url }}"></script>
-    <script src="{{ "javascript/bootstrap.min.js" | relative_url }}"></script>
+    <script src="{{ site.baseurl }}/javascript/jquery-1.11.2.min.js"></script>
+    <script src="{{ site.baseurl }}/javascript/bootstrap.min.js"></script>
 
 </head>
