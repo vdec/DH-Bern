@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+    <title>Comparaisons</title>
+    <meta name="description" content="This is an example website for the DH projects 2017" />
+
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen,projection" href="/css/main.css" />
+    
+    <script src="/javascript/jquery-1.11.2.min.js"></script>
+    <script src="/javascript/bootstrap.min.js"></script>
+
+</head>
+  <body>
+      
+    <div id="wrap">
+
+    <nav class="navbar navbar-static-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+        
+        <li><a href="/about.html">About</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/compaisons.html">Comparaisons</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/">Home</a></li>
+        
+        
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 blog-main">
+          <h1>Comparaisons</h1>
+
+<!-- Construction du selecteur a partir de la structure en en-tête -->
+<!-- La valeur de chaque option est "texte1:texte2" -- >
+<select class="form-control" onchange="showComparison(this.options[this.selectedIndex].value)" id="selector">
+
+  <optgroup label="Notations">
+    
+    <option value="notations:angaben">Angaben</option>
+    
+    <option value="notations:notiert">Notiert</option>
+    
+  </optgroup>
+
+</select>
+
+<!-- div (vides) pour placer les textes et le commentaire -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 panel-body" id="text1">
+    </div>
+    <div class="col-sm-4 panel-body" id="text2">
+    </div>
+    <div class="col-sm-4 panel-body" id="comment">
+    </div>
+  </div>
+</div>
+
+
+<script>
+    // Fonction pour charger les fichiers de textes et le commentaire
+    // Le paramètre de la fonction est "texte1:texte2", ce qui correspond à la valeur dans le sélecteur
+    function showComparison(values) {
+        var split = values.split(":");
+
+        var file1 = "texts/" + split[0] + ".html";
+        $.ajax({
+            url: file1
+            , dataType: "text"
+            , success: function(data) {
+                $("#text1").html(data);
+            }
+        });
+        
+        var file2 = "texts/" + split[1] + ".html";
+        $.ajax({
+            url: file2
+            , dataType: "text"
+            , success: function(data) {
+                $("#text2").html(data);
+                console.log(data);
+            }
+        });
+        
+        var file3 = "comments/" + split[0] + "-" + split[1] + ".html";
+        $.ajax({
+            url: file3
+            , dataType: "text"
+            , success: function(data) {
+                $("#comment").html(data);
+                console.log(data);
+            }
+        });
+    }
+    
+    // Charge le texte par défaut à l'ouverture de la page
+    $( document ).ready(function() {
+        var select = document.getElementById("selector");
+        showComparison(select.options[select.selectedIndex].value);
+    });  
+</script>
+
+
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+  <div class="footer navbar-fixed-bottom" id="footer">
+  <div class="container">
+    <div class="col-sm-12 navbar-text">
+      <p>DH Unibe project 2017</p>
+    </div>
+  </div>
+</div>
+
+  </body>
+
+</html>

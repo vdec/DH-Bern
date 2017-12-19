@@ -1,0 +1,15 @@
+# Site settings
+title: DH project
+description: "This is an example website for the DH projects 2017"
+email: lxpugin@gmail.com
+baseurl: "/" 
+
+# Build settings
+markdown: kramdown
+
+# Version
+version: 1.0.0
+
+# Repository
+github:
+  repo: https://github.com/DHBern/tiny-edition
